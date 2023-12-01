@@ -1,0 +1,45 @@
+# Specifies Node Version 18.18.2 & Alpine Linux Version 3.18 OS
+FROM node:18.18.2-alpine3.18
+
+# Application Container Root Directory
+WORKDIR /app
+
+# install pnpm globally inside container only
+RUN npm install -g pnpm
+
+# Copy dependency version files first to utilize dockers layer dependency caching
+COPY package.json pnpm-lock.yaml ./
+
+# install dependencies
+RUN pnpm install
+
+# Copy everything from the current DIR to the container DIR
+COPY . .
+
+# Starts the project
+CMD ["pnpm", "run", "dev"]
+
+# Specifies the port the container listens to
+EXPOSE 3000
+
+## build docker file and run in dev mode
+
+# docker build -f Dockerfile.dev -t your-image-name .
+# docker run --name container_name -p 3000:3000 -v $(pwd):/app image_name
+
+# Follow the real time logs again after stopping and starting the container
+# docker logs -f container_name
+
+# project link: http://localhost:3000/
+
+# or
+
+## build docker file and run in production mode
+
+# docker build -f Dockerfile.prod -t your-image-name .
+# docker run --name container_name -p 3000:3000 your-image-name
+
+# Follow the real time logs again after stopping and starting the container
+# docker logs -f container_name
+
+# project link: http://localhost:3000/

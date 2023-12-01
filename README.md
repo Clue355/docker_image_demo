@@ -64,7 +64,7 @@ docker compose down app-dev
 
 `Note: After running docker compose down the image you pulled will still exist on your local computer`
 
-For production you just replace app-dev with app-prod
+`Note: For production you just replace app-dev with app-prod`
 
 ## Useful Docker commands
 
