@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app-dev:
+    image: clue355/docker-test:dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+
+  app-prod:
+    image: clue355/docker-test:prod
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+

@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Docker Documentation
 
-## Getting Started
+## Table of contents
 
-First, run the development server:
+-   [Installing Docker](#make-sure-docker-compose-is-installed)
+-   [Test Docker](#command-to-test-docker-in-your-terminal)
+-   [Docker Hub Login](#login-to-docker-hub)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Make sure Docker Compose is installed
+
+For Linux and Windows: [Docker Desktop or CLI Install](https://docs.docker.com/compose/install/)
+
+## Command to test Docker in your terminal
+
+Use this command to run Docker hello-world image
+
+```
+docker run hello-world
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Login to Docker Hub
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+generate a token from docker hub or github container registry:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+github:
 
-## Learn More
+-   go to settings
+-   Click on developer settings at the bottom
+-   Click on personal access tokens tab
+-   Click on Tokens (classic)
+-   Click on generate new Token (classic)
+-   Enable the settings: write:packages and delete:packages
+-   Give it a name then generate the token
 
-To learn more about Next.js, take a look at the following resources:
+docker hub:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   click on the drop down near your user name on the top right
+-   click account settings
+-   click on security then new access token
+-   name it then generate one
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Run this command in the terminal:
 
-## Deploy on Vercel
+```
+docker login
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Enter your username for either github container registry or docker hub
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Then you will enter the token you generated as the password
+
+## Commands to start the project
+
+All the commands you need to start and stop the project are here in this section.
+
+Start the project by using this command to pull the built image and run it in a container:
+
+```
+docker compose up app-dev
+```
+
+Stop the project and remove the container created:
+
+```
+docker compose down app-dev
+```
+
+`Note: After running docker compose down the image you pulled will still exist on your local computer`
+
+For production you just replace app-dev with app-prod
