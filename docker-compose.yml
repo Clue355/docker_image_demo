@@ -10,8 +10,8 @@ services:
     environment:
       - NODE_ENV=development
 
-  app-prod:
-    image: clue355/docker-test:prod
+  app-github-dev:
+    image: ghcr.io/clue355/github_dev:dev
     ports:
       - "3000:3000"
     environment:

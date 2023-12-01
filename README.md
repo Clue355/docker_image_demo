@@ -22,7 +22,7 @@ docker run hello-world
 
 generate a token from docker hub or github container registry:
 
-github:
+`github:`
 
 -   go to settings
 -   Click on developer settings at the bottom
@@ -32,22 +32,19 @@ github:
 -   Enable the settings: write:packages and delete:packages
 -   Give it a name then generate the token
 
-docker hub:
+`docker hub:`
 
 -   click on the drop down near your user name on the top right
 -   click account settings
 -   click on security then new access token
 -   name it then generate one
 
-Run this command in the terminal:
+Enter your username and token (as a password) using the following flags, either for GitHub Container Registry or Docker
+Hub.
 
 ```
-docker login
+docker login --username username_here --password password_here
 ```
-
-Enter your username for either github container registry or docker hub
-
-Then you will enter the token you generated as the password
 
 ## Commands to start the project
 
@@ -68,3 +65,29 @@ docker compose down app-dev
 `Note: After running docker compose down the image you pulled will still exist on your local computer`
 
 For production you just replace app-dev with app-prod
+
+## Useful Docker commands
+
+See all docker images
+
+```
+docker image ls
+```
+
+See all docker containers
+
+```
+docker ps -a
+```
+
+Remove an image
+
+```
+docker rmi image_name_or_ID
+```
+
+Remove a container
+
+```
+docker rm container_name_or_ID
+```
