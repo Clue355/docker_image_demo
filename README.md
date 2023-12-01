@@ -4,11 +4,13 @@
 
 -   [Installing Docker](#make-sure-docker-compose-is-installed)
 -   [Test Docker](#command-to-test-docker-in-your-terminal)
--   [Docker Hub Login](#login-to-docker-hub)
+-   [Login to Docker Hub](#login-to-docker-hub)
+-   [Start/Stop Project](#commands-to-start-the-project)
+-   [Useful Commands](#useful-docker-commands)
 
 ## Make sure Docker Compose is installed
 
-For Linux and Windows: [Docker Desktop or CLI Install](https://docs.docker.com/compose/install/)
+For Linux, Mac, and Windows: [Docker Desktop ](https://docs.docker.com/desktop/install/linux-install/)
 
 ## Command to test Docker in your terminal
 
