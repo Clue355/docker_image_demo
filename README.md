@@ -93,3 +93,11 @@ Remove a container
 ```
 docker rm container_name_or_ID
 ```
+
+Build the image:
+
+-   -t is to rename the file and you can add a tag that's included below after the colon ":"
+
+```
+docker build -f Dockerfile.dev -t github_dev:dev .
+```
