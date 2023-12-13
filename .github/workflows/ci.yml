@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: LGT Docker Build and Push Image
 
 on:
     pull_request:

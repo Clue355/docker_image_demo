@@ -99,5 +99,5 @@ Build the image:
 -   -t is to rename the file and you can add a tag that's included below after the colon ":"
 
 ```
-docker build -f Dockerfile.dev -t github_dev:dev .
+docker build -f Dockerfile.dev -t ghcr.io/letsgettechnical/name:tag .
 ```

@@ -21,25 +21,3 @@ CMD ["pnpm", "run", "dev"]
 
 # Specifies the port the container listens to
 EXPOSE 3000
-
-## build docker file and run in dev mode
-
-# docker build -f Dockerfile.dev -t your-image-name .
-# docker run --name container_name -p 3000:3000 -v $(pwd):/app image_name
-
-# Follow the real time logs again after stopping and starting the container
-# docker logs -f container_name
-
-# project link: http://localhost:3000/
-
-# or
-
-## build docker file and run in production mode
-
-# docker build -f Dockerfile.prod -t your-image-name .
-# docker run --name container_name -p 3000:3000 your-image-name
-
-# Follow the real time logs again after stopping and starting the container
-# docker logs -f container_name
-
-# project link: http://localhost:3000/
