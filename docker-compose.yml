@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app-dev:
-    image: your_container_repo_here
+    image: ghcr.io/letsgettechnical/dev:latest
     ports:
       - "3000:3000"
     volumes:
@@ -10,8 +10,8 @@ services:
     environment:
       - NODE_ENV=development
 
-  app-prod:
-    image: your_other_container_repo_here
+  app-github-dev:
+    image: ghcr.io/clue355/github_dev:dev
     ports:
       - "3000:3000"
     environment:
