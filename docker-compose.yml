@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app-dev:
-    image: clue355/docker-test:dev
+    image: ghcr.io/letsgettechnical/dev:latest
     ports:
       - "3000:3000"
     volumes:
